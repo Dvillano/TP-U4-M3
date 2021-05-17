@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body >
+<main>
+    <div class="container">
+        <h1>Resultados de la Rifa</h1>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Numero</th>
+                <th>Pais</th>
+            </tr>
+
+            <% for (let i = 0; i < respuesta.length; i++){ %>
+                <tr>
+                    <td><%= respuesta[i].nombre %> </td>
+                    <td><%= respuesta[i].apellido %> </td>
+                    <td><%= respuesta[i].numero %></td>
+                    <td><%= respuesta[i].id_pais %> </td>
+                </tr>
+            <% } %>
+        </table>
+
+    </div>
+</main>
+
+
+</body>
+</html>
