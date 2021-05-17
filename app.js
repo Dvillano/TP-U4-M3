@@ -33,6 +33,7 @@ const qy = util.promisify(conexion.query).bind(conexion); // Permite el uso de a
  * Metodo POST para enviar informacion
  * Metodo GET para mostrarla
  */
+
 // Obtener toda la informacion de la tabla empleados
 app.get('/empleados', async (req, res) => {
     try {
@@ -52,11 +53,11 @@ app.get('/empleados', async (req, res) => {
 app.post('/empleados', async (req, res) => {
     try {
         // Validacion
-        if(!req.body.nombre || !req.body.apellido || !req.body.sexo){
+        if(!req.body.nombre || !req.body.apellido || !req.body.sexo || !req.body.oficina){
             throw new Error('Falta enviar algun dato');
         }
 
-        //Verifico que no exista previamente esa persona
+        //Verifico que no exista previamente esa persona 
         let query = 'SELECT * FROM empleados WHERE nombre = ? AND apellido = ? AND sexo = ?'
 
         let respuesta = await qy(query, [req.body.nombre, req.body.apellido, req.body.sexo]);
@@ -69,10 +70,18 @@ app.post('/empleados', async (req, res) => {
         query = 'INSERT INTO empleados (nombre, apellido, sexo, oficina) VALUES (?, ?, ?, ?)';
         respuesta = await qy(query, [req.body.nombre, req.body.apellido, req.body.sexo, req.body.oficina]);
 
-        // Guardar oficina
-        query = 'INSERT INTO oficinas (localidad) VALUES (?)';
-        respuesta = await qy(query, [req.body.oficina]);
-
+        
+        // // Verificar que oficina no exista
+        // query = 'SELECT * FROM oficinas WHERE localidad = ?'
+        // respuesta = await qy(query, [req.body.oficina]);
+        
+        // if (respuesta == 0){
+        //     // Guardar oficina
+        //     query = 'INSERT INTO oficinas (localidad) VALUES (?)';
+        //     respuesta = await qy(query, [req.body.oficina]);
+        // }
+        
+        
         console.log(respuesta);
         res.send({'respuesta': respuesta.affectedRows});
 
