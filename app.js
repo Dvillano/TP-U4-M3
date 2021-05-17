@@ -5,6 +5,9 @@ const util = require('util');
 const app = express();
 const PORT = 3000;
 
+app.use(express.static('public'));
+
+
 app.use(express.json()); // Permite el mapeo de la peticion de JSON a JS
 
 //Conexion a base de datos
@@ -67,20 +70,8 @@ app.post('/empleados', async (req, res) => {
         }
 
         // Guardar empleado
-        query = 'INSERT INTO empleados (nombre, apellido, sexo, oficina) VALUES (?, ?, ?, ?)';
-        respuesta = await qy(query, [req.body.nombre, req.body.apellido, req.body.sexo, req.body.oficina]);
-
-        
-        // // Verificar que oficina no exista
-        // query = 'SELECT * FROM oficinas WHERE localidad = ?'
-        // respuesta = await qy(query, [req.body.oficina]);
-        
-        // if (respuesta == 0){
-        //     // Guardar oficina
-        //     query = 'INSERT INTO oficinas (localidad) VALUES (?)';
-        //     respuesta = await qy(query, [req.body.oficina]);
-        // }
-        
+        query = 'INSERT INTO empleados (nombre, apellido, sexo, oficina) VALUES (?, ?, ?)';
+        respuesta = await qy(query, [req.body.nombre, req.body.apellido, req.body.sexo]);    
         
         console.log(respuesta);
         res.send({'respuesta': respuesta.affectedRows});
