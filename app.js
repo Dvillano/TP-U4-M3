@@ -20,10 +20,10 @@ app.use(express.json()); // Permite el mapeo de la peticion de JSON a JS
 
 //Conexion a base de datos
 const conexion = mysql.createConnection({
-    host: 'us-cdbr-east-03.cleardb.com',
-    user: 'ba1762bbe88050',
-    password: '3213ee28',
-    database: 'heroku_3ca8164a51f4a1f'
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'rifa'
 });
 
 // Verificar conexion a base de datos
@@ -145,6 +145,6 @@ app.get("*", (req,res) => {
 }) 
 
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, () => {
     console.log('Servidor escuchando en puerto ', PORT);
 })
