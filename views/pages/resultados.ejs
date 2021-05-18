@@ -32,7 +32,7 @@
         </table>
 
         <!-- Borro los datos de la tabla  -->
-        <form action="/delete" method="POST">
+        <form class="botonReset" action="/delete" method="POST">
             <button type="submit" name="submit" >Crear Rifa</a></button>
         </form>
         
@@ -46,7 +46,7 @@
         
         for (let i = 0; i < numeroElegido.length; i++){
             if (numeroElegido[i].outerText == randomNumber){
-                numeroElegido[i].className = 'ganador';
+                numeroElegido[i].parentElement.classList = 'ganador';
             }
         };
 
