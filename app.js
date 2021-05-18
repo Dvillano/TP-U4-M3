@@ -20,8 +20,8 @@ app.use(express.json()); // Permite el mapeo de la peticion de JSON a JS
 
 //Conexion a base de datos
 const conexion = mysql.createConnection({
-    host: 'rifa-ij6568k40cwohitn-svc.qovery.io',
-    user: 'freedb.tech',
+    host: 'freedb.tech',
+    user: 'freedbtech_dvillano',
     password: '123456',
     database: 'freedbtech_rifa'
 });
