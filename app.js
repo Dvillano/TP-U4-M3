@@ -20,9 +20,9 @@ app.use(express.json()); // Permite el mapeo de la peticion de JSON a JS
 
 //Conexion a base de datos
 const conexion = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    host: 'rifa-ij6568k40cwohitn-svc.qovery.io',
+    user: 'superuser',
+    password: 'IwUmvtjPY0eJn8RX',
     database: 'rifa'
 });
 
