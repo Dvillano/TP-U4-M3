@@ -103,7 +103,18 @@ app.post('/rifa', async (req, res) => {
     query = 'INSERT INTO participante (nombre, apellido, numero, id_pais) VALUE (?, ?, ?, ?)';
     respuesta = await qy(query, [req.body.nombre, req.body.apellido, req.body.numero, req.body.pais]);
 
-    res.redirect('/rifa');
+    query = 'SELECT * FROM participante'
+    respuesta = await qy(query)
+    console.log(respuesta);
+
+    if(respuesta.length < 5){
+        res.redirect('/');
+    }
+    else
+    {
+        res.redirect('/rifa');
+    }
+   
 
     } catch (error) {
         console.error(error.message);
@@ -111,7 +122,24 @@ app.post('/rifa', async (req, res) => {
     }
 })
 
+// Borro los datos de la tabla
+app.post('/delete', async (req, res) => {
+    try {
 
+        let query = 'DELETE FROM participante'
+        let respuesta = await qy(query)
+
+        
+        console.log(respuesta);
+        res.redirect('/');
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(413).send({'Error': error.message});
+    }
+})
+
+// Redirecciona en caso de ir a rutas diferentes
 app.get("*", (req,res) => {
     res.redirect("/");
 }) 

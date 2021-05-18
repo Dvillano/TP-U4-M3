@@ -8,18 +8,18 @@
     <title>Rifa</title>
 </head>
 <body>
-    
-    <div class="formContainer">
-        <h1>Rifa anual de autos</h1>
-        <h3>Bienvenidos, por favor ingrese sus datos para participar. Solo valido para Argentina, Uruguay y Brasil</h3>
-        <h3>Los resultados se mostraran despues haber vendido todos los numeros</h3>
-        <form action="/rifa" method="POST">
+    <h1>¡Rifa!</h1>
+    <h3>Bienvenido, por favor ingrese sus datos para participar.Los resultados se mostraran despues haber vendido todos los numeros</h3>
+    <h4>Solo valido para Argentina, Uruguay y Brasil</h4>
 
+    <div class="formContainer">
+        <form action="/rifa" method="POST">
+   
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" required>
+            <input type="text" name="nombre" id="nombre" pattern="[A-Za-z]+" required>
             
             <label for="apellido">Apellido</label>
-            <input type="text" name="apellido" id="apellido" required>
+            <input type="text" name="apellido" id="apellido" pattern="[A-Za-z]+" required>
 
             <label for="numero">Numero a elegir (1 al 5)</label>
             <input type="number" name="numero" id="numero"  min= 1 max = 5 required>

@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body >
 <main>
+
+    <h5>Resultados de la Rifa</h5>
     <div class="container">
-        <h1>Resultados de la Rifa</h1>
+       
 
         <table>
             <tr>
@@ -19,15 +25,31 @@
                 <tr>
                     <td><%= respuesta[i].nombre %> </td>
                     <td><%= respuesta[i].apellido %> </td>
-                    <td><%= respuesta[i].numero %></td>
+                    <td id="numeroElegido"><%= respuesta[i].numero %></td>
                     <td><%= respuesta[i].id_pais %> </td>
                 </tr>
             <% } %>
         </table>
 
+        <!-- Borro los datos de la tabla  -->
+        <form action="/delete" method="POST">
+            <button type="submit" name="submit" >Crear Rifa</a></button>
+        </form>
+        
     </div>
 </main>
 
+    <script>
+        // Elegimos un numero al azar entre los tickets de la rifa
+        const randomNumber = Math.floor(1 + Math.random() * 5);
+        let numeroElegido = document.querySelectorAll("#numeroElegido");
+        
+        for (let i = 0; i < numeroElegido.length; i++){
+            if (numeroElegido[i].outerText == randomNumber){
+                numeroElegido[i].className = 'ganador';
+            }
+        };
 
+    </script>
 </body>
 </html>

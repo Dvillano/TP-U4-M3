@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background: #E5E5E5
+}
+
+h1 {
+
+    position: absolute;
+    width: 334px;
+    height: 137px;
+    left: 225px;
+    top: 12px;
+    
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 133px;
+    line-height: 103.3%;
+    /* or 137px */
+    
+    letter-spacing: -2px;
+    
+    color: #000000;
+}
+
+h3 {
+    position: absolute;
+    width: 703px;
+    height: 297px;
+    left: 40px;
+    top: 215px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 211.5%;
+    /* or 76px */
+
+    text-align: center;
+    letter-spacing: 1px;
+
+    color: #4200FF;
+}
+
+h4 {
+    position: absolute;
+    width: 820px;
+    height: 72px;
+    left: 134px;
+    top: 553px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 211.5%;
+    /* or 51px */
+
+    letter-spacing: 1px;
+
+    color: #000000;
+}
+/* Ganador de la rifa */
+.ganador {
+    color: #0ACF83;
+}
+
+label {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    height: 30px;
+    width: 270px;
+    left: 17px;
+    top: 0.5px;
+
+    margin-bottom: 5px;
+
+
+    color: #000000;
+
+    transform: rotate(-0.01deg);
+
+}
+
+input, select{
+    background: #F0F0F0;
+    border-radius: 4px;
+    transform: rotate(-0.01deg);
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+
+    height: 41px;
+    width: 430px;
+    left: 835px;
+    top: 134px;
+
+    margin-bottom: 5px;
+
+    color: #543FD3;
+}
+
+input:focus {
+    background: #FFFFFF;
+    border: 2px solid #543FD3;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+
+    position: absolute;
+    width: 500px;
+    height: 438px;
+    left: 798px;
+    top: 84px;
+}
+
+#submit {
+    cursor:pointer;
+
+    width: 120px;
+    height: 40px;
+    justify-content: center;
+
+    margin: auto;
+    
+    /* Black */
+    
+    background: #111111;
+    /* Tertiary Black */
+    
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 6px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* White */
+
+    color: #FFFFFF;
+}
+
+#submit:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* EJS */
+h5 {
+    position: absolute;
+    width: 436px;
+    height: 56px;
+    left: 422px;
+    top: 56px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 211.5%;
+    /* or 76px */
+
+    text-align: center;
+    letter-spacing: 1px;
+
+    color: #4200FF;
+}
+
+button{
+    position: absolute;
+    left: 45.61%;
+    right: 45.61%;
+    top: 85.28%;
+    bottom: 8.32%;
+
+    cursor:pointer;
+
+    width: 120px;
+    height: 40px;
+    justify-content: center;
+    
+    /* Black */
+    
+    background: #111111;
+    /* Tertiary Black */
+    
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 6px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* White */
+
+    color: #FFFFFF;
+}
+
+button:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    text-align: center;
+}
+
+table {
+    margin: 0, auto;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+
+}
+
+td {
+
+}
