@@ -1,0 +1,15 @@
+---
+application:
+  name: "tp-u4-m3"
+  project: "tp-u4-m4-danielvillano"
+  organization: "QoveryCommunity"
+databases:
+- type: "MYSQL"
+  name: "rifa"
+  version: "8.0"
+routers:
+- name: "main-tp-u4-m3"
+  routes:
+  - application_name: "tp-u4-m3"
+    paths:
+    - "/*"
